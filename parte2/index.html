@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// Função que valida o nome da cidade usando expressão regular
+function validateCityName(city) {
+    // A expressão regular permite apenas letras (maiúsculas e minúsculas), espaços e traços
+    const regex = /^[A-Za-zÀ-ÿ\s-]+$/;
+    return regex.test(city);
+}
+
+// Função assíncrona para buscar os dados do tempo na API do OpenWeatherMap
+async function getWeather(city) {
+    const apiKey = "SUA_API_KEY_AQUI"; // Substitua por sua chave da API
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric&lang=pt`;
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Erro ao buscar dados. Cidade não encontrada ou erro na API.");
+        }
+
+        const data = await response.json();
+
+        // Retorna os dados climáticos relevantes (temperatura)
+        return data.main.temp;
+
+    } catch (error) {
+        console.error("Erro:", error.message);
+        return null;
+    }
+}
+
+// Função principal que solicita a cidade ao usuário, valida e exibe o clima
+async function main() {
+    // Solicita a entrada do usuário
+    const city = prompt("Digite o nome da cidade:");
+
+    // Valida o nome da cidade
+    if (!validateCityName(city)) {
+        console.log("Nome de cidade inválido. Use apenas letras, espaços e traços.");
+        return;
+    }
+
+    // Chama a função que busca os dados climáticos
+    const temperature = await getWeather(city);
+
+    // Se obteve uma temperatura válida, exibe
+    if (temperature !== null) {
+        console.log(`A temperatura atual em ${city} é de ${temperature}°C.`);
+    } else {
+        console.log("Não foi possível obter os dados do tempo.");
+    }
+}
+
+// Executa o programa
+main();
+
+    </script>
+</body>
+</html>
