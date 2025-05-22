@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta Climática e Demográfica dos Estados Brasileiros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho principal -->
+  <header>
+    <div class="container">
+      <h1>Portal de Informações dos Estados Brasileiros</h1>
+      <p>Consulte informações demográficas e previsão do tempo das cidades brasileiras</p>
+    </div>
+  </header>
+
+  <!-- Seção de entrada de dados -->
+  <main>
+    <section id="consulta-formulario" class="container">
+      <h2>Consultar Cidade</h2>
+
+      <form id="form-consulta">
+        <!-- Campo de entrada de cidade -->
+        <label for="input-cidade">Digite o nome da cidade:</label>
+        <input type="text" id="input-cidade" name="cidade" placeholder="Ex: Belo Horizonte" required>
+
+        <!-- Botão de consulta -->
+        <button type="submit" id="btn-consultar">Consultar</button>
+      </form>
+    </section>
+
+    <!-- Seção de resultados -->
+    <section id="resultado-consulta" class="container">
+      <h2>Resultado da Consulta</h2>
+
+      <!-- Informações climáticas -->
+      <div id="dados-clima" class="box-dados">
+        <h3>Previsão do Tempo</h3>
+        <p id="previsao-texto">Nenhuma previsão carregada.</p>
+        <ul id="dados-tempo">
+          <li><strong>Temperatura Atual:</strong> <span id="temperatura-atual">--</span></li>
+          <li><strong>Clima:</strong> <span id="clima-descricao">--</span></li>
+          <li><strong>Umidade:</strong> <span id="umidade">--</span></li>
+          <li><strong>Velocidade do Vento:</strong> <span id="vento">--</span></li>
+        </ul>
+      </div>
+
+      <!-- Informações demográficas -->
+      <div id="dados-demograficos" class="box-dados">
+        <h3>Informações da Cidade</h3>
+        <ul>
+          <li><strong>Cidade:</strong> <span id="cidade-nome">--</span></li>
+          <li><strong>População:</strong> <span id="populacao">--</span></li>
+          <li><strong>Região:</strong> <span id="regiao">--</span></li>
+          <li><strong>Disponível na API:</strong> <span id="disponivel">--</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Histórico de consultas -->
+    <section id="historico-consultas" class="container">
+      <h2>Histórico de Consultas</h2>
+
+      <div id="box-historico">
+        <ul id="lista-historico">
+          <!-- Consultas anteriores serão adicionadas aqui via JavaScript -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé fixo -->
+  <footer>
+    <div class="container">
+      <p>&copy; projetinho</p>
+      <p>para fins educacionais.</p>
+    </div>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>

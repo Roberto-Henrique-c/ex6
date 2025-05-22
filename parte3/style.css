@@ -1,0 +1,220 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo e fonte */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 100px; /* espaço para rodapé fixo */
+}
+
+/* Containers padrão */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #0f4c81;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #d1e7f5;
+}
+
+/* Formulário de consulta */
+#consulta-formulario {
+  background-color: white;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+#consulta-formulario h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #0f4c81;
+}
+
+#form-consulta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#input-cidade {
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+#input-cidade:focus {
+  border-color: #0f4c81;
+  outline: none;
+}
+
+#btn-consultar {
+  padding: 0.75rem;
+  background-color: #0f4c81;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#btn-consultar:hover {
+  background-color: #0c3a64;
+}
+
+/* Seção de resultados */
+#resultado-consulta {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+#resultado-consulta h2 {
+  width: 100%;
+  font-size: 1.8rem;
+  color: #0f4c81;
+  margin-bottom: 1rem;
+}
+
+/* Box de dados */
+.box-dados {
+  flex: 1 1 45%;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  min-width: 300px;
+}
+
+.box-dados h3 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #0f4c81;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.box-dados ul {
+  list-style: none;
+}
+
+.box-dados li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.box-dados li strong {
+  color: #0c3a64;
+}
+
+/* Histórico */
+#historico-consultas {
+  margin-top: 3rem;
+}
+
+#historico-consultas h2 {
+  font-size: 1.8rem;
+  color: #0f4c81;
+  margin-bottom: 1rem;
+}
+
+#box-historico {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+#lista-historico {
+  list-style: none;
+}
+
+#lista-historico li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95rem;
+}
+
+/* Scroll estilizado */
+#box-historico::-webkit-scrollbar {
+  width: 10px;
+}
+
+#box-historico::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+#box-historico::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+}
+
+/* Rodapé fixo */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0f4c81;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+footer p {
+  margin: 0.2rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #resultado-consulta {
+    flex-direction: column;
+  }
+
+  .box-dados {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #btn-consultar {
+    font-size: 0.95rem;
+  }
+}
