@@ -1,17 +1,20 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corpo e fonte */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f7fa;
   color: #333;
   line-height: 1.6;
-  padding-bottom: 100px; 
+  padding-bottom: 100px; /* espaço para rodapé fixo */
 }
 
+/* Containers padrão */
 .container {
   width: 90%;
   max-width: 1100px;
@@ -19,6 +22,7 @@ body {
   padding: 2rem 0;
 }
 
+/* Cabeçalho */
 header {
   background-color: #0f4c81;
   color: white;
@@ -37,6 +41,7 @@ header p {
   color: #d1e7f5;
 }
 
+/* Formulário de consulta */
 #consulta-formulario {
   background-color: white;
   padding: 2rem;
@@ -85,6 +90,7 @@ header p {
   background-color: #0c3a64;
 }
 
+/* Seção de resultados */
 #resultado-consulta {
   margin-top: 2rem;
   display: flex;
@@ -100,6 +106,7 @@ header p {
   margin-bottom: 1rem;
 }
 
+/* Box de dados */
 .box-dados {
   flex: 1 1 45%;
   background-color: white;
@@ -129,6 +136,53 @@ header p {
 .box-dados li strong {
   color: #0c3a64;
 }
+
+/* Histórico */
+#historico-consultas {
+  margin-top: 3rem;
+}
+
+#historico-consultas h2 {
+  font-size: 1.8rem;
+  color: #0f4c81;
+  margin-bottom: 1rem;
+}
+
+#box-historico {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+#lista-historico {
+  list-style: none;
+}
+
+#lista-historico li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95rem;
+}
+
+/* Scroll estilizado */
+#box-historico::-webkit-scrollbar {
+  width: 10px;
+}
+
+#box-historico::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+#box-historico::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+}
+
+/* Rodapé fixo */
 footer {
   position: fixed;
   bottom: 0;

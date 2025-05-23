@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <!-- Cabeçalho principal -->
   <header>
     <div class="container">
       <h1>Portal de Informações dos Estados Brasileiros</h1>
@@ -15,20 +16,26 @@
     </div>
   </header>
 
+  <!-- Seção de entrada de dados -->
   <main>
     <section id="consulta-formulario" class="container">
       <h2>Consultar Cidade</h2>
+
       <form id="form-consulta">
+        <!-- Campo de entrada de cidade -->
         <label for="input-cidade">Digite o nome da cidade:</label>
         <input type="text" id="input-cidade" name="cidade" placeholder="Ex: Belo Horizonte" required>
 
+        <!-- Botão de consulta -->
         <button type="submit" id="btn-consultar">Consultar</button>
       </form>
     </section>
 
+    <!-- Seção de resultados -->
     <section id="resultado-consulta" class="container">
       <h2>Resultado da Consulta</h2>
 
+      <!-- Informações climáticas -->
       <div id="dados-clima" class="box-dados">
         <h3>Previsão do Tempo</h3>
         <p id="previsao-texto">Nenhuma previsão carregada.</p>
@@ -39,15 +46,40 @@
           <li><strong>Velocidade do Vento:</strong> <span id="vento">--</span></li>
         </ul>
       </div>
-    </section>  
+
+      <!-- Informações demográficas -->
+      <div id="dados-demograficos" class="box-dados">
+        <h3>Informações da Cidade</h3>
+        <ul>
+          <li><strong>Cidade:</strong> <span id="cidade-nome">--</span></li>
+          <li><strong>População:</strong> <span id="populacao">--</span></li>
+          <li><strong>Região:</strong> <span id="regiao">--</span></li>
+          <li><strong>Disponível na API:</strong> <span id="disponivel">--</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Histórico de consultas -->
+    <section id="historico-consultas" class="container">
+      <h2>Histórico de Consultas</h2>
+
+      <div id="box-historico">
+        <ul id="lista-historico">
+          <!-- Consultas anteriores serão adicionadas aqui via JavaScript -->
+        </ul>
+      </div>
+    </section>
   </main>
 
+  <!-- Rodapé fixo -->
   <footer>
     <div class="container">
-      <p>&copy; projetinho: Roberto, Agatha e Victor</p>
-      <p>para fins educacionais.</p>
+      <p>&copy; 2025 - Projeto Técnico - Consulta de Estados Brasileiros</p>
+      <p>Desenvolvido para fins educacionais</p>
     </div>
   </footer>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
