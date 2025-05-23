@@ -28,7 +28,7 @@ document.getElementById('form-consulta').addEventListener('submit', async functi
     const cidadeInput = document.getElementById('input-cidade').value.trim() ;
 
     if (!validateCityName(cidadeInput)) {
-        alert("Nome de cidade inválido. Use apenas letras, espaços e traços.") ;
+        alert("Nome de cidade inválido, use apenas letras, espaços e traços.") ;
         return;
     }
 
@@ -41,7 +41,7 @@ document.getElementById('form-consulta').addEventListener('submit', async functi
         document.getElementById('vento').textContent = `${clima.vento} m/s` ;
 
     } catch (erro) {
-        alert("Erro ao consultar cidade. Verifique se o nome está correto.") ;
+        alert("Erro ao consultar cidade, verifique se o nome está correto.") ;
         console.error(erro);
     }
 });
