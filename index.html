@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <title>Validaçãode Email</title>
+</head>
+<body>
+    <h1>Validação de Email</h1>
+    <Script>
+        function ValidateEmail(email){
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.teste(email);
+        }
+
+        async function checkEmailInDatabase(email) {
+            console.log('verificando email: ${email}');
+           await new Promise(resolve => setTimeout(resolve, 2000));
+           const registeredEmails = ["test@example.com", "user@domain.com"];
+           return registeredEmails.includes(email);
+        }
+
+       async function main() {
+    const email = prompt("Digite seu endereço de email:");
+    
+    if (validateEmail(email)) {
+        const isRegistered = await checkEmailInDatabase(email);
+        
+        if (isRegistered) {
+            console.log("Este email já está registrado.");
+        } else {
+            console.log("Este email não está registrado.");
+        }
+    } else {
+        console.log("Email inválido. Por favor, digite um email válido.");
+    }
+}
+        
+    </Script>
+</body>
+</html>
